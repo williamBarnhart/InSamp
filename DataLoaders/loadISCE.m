@@ -54,8 +54,8 @@ mag=[];
 phs=[];
 
 n        = length(filename);
-patterns = {'cor','unw','rdr','flat','hgt','dem','slc'};
-figtype  = {'rmg','rmg','rmg','cpx','rmg','rmg','cpx'};
+patterns = {'phsig','cor','unw','rdr','flat','hgt','dem','slc'};
+figtype  = {'phsig','rmg','rmg','rmg','cpx','rmg','rmg','cpx'};
 
 
 
@@ -72,7 +72,7 @@ if(regexp(filename,'geo'))
     %     [nx,ny,x1,y2,dx,dy] = load_xml([pathname '/' filename '.xml'],
     [nx,ny,x1,y2,dx,dy] = loadGeoXml([filename '.xml']);
     if regexp(filename,'merged')
-        lambda= '0.05465763';
+        lambda= '0.055465763';
     else
         lambda  = loadGenericXml([pathname '/insarProc.xml'],'radar_wavelength');
         % lambda='0.055';
@@ -82,7 +82,7 @@ if(regexp(filename,'geo'))
 else
     if regexp(filename,'merged')
         
-        lambda = '0.055';
+        lambda = '0.05465763';
         [nx, ny] = loadISCEinfo([pathname(1:end-7) '/isce.log'],'isce.mroipac.filter - DEBUG - width','isce.mroipac.filter - DEBUG - length');
         
     else
@@ -124,6 +124,11 @@ switch type
         mag         = abs(real+im*imag);
         phs         = angle(real+im*imag);
         data        = phs;
+    case 'phsig'
+        disp('Loading PHSIG file')
+        fid=fopen(filename,'r','native');
+        [cor,count]=fread(fid,[nx, ny],'real*4');
+        data = flipud(cor');
 end
 
 
