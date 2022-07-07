@@ -77,14 +77,6 @@ switch func
             func=18;
         end
         set(fh(7),'string',num2str(zone));
-
-[ny,nx]=size(savestruct.X);
-        data = savestruct.data;
-        X   = savestruct.X;
-        Y   = savestruct.Y;
-        zone= savestruct.zone;
-        
-        set(fh(7),'string',num2str(zone));
         numdatas             = numdatas+1;
 
     case 5 %load fault set
