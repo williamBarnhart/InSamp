@@ -6,8 +6,8 @@ switch processor
             error('Designate a geo_incidence.unw file and path');
         end
         
-        datastruct = loadROIPAC(datefilename,zone,limitny,azo);
-        datastruct = loadLOS_ROIPAC(datastruct,losfilename,azo,cont_los);
+        datastruct = loadROIPAC(datafilename,zone,limitny,azo);
+        datastruct = loadLOS_ROIPAC(datastruct,losfilename,azo,const_los);
     
     case 'ISCE'
         datastruct = loadISCE(datafilename, zone, limitny, azo);
@@ -19,5 +19,3 @@ switch processor
         datastruct = loadGAMMA(datafilename, losfilename, parfile,zone);
         
 end
-
-        
