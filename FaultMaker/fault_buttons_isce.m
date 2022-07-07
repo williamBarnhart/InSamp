@@ -70,7 +70,8 @@ switch func
         nx         = datastruct.nx;
         ny         = datastruct.ny;
         X          = datastruct.X;
-        Y          = datastruct.Y;       docrop     = str2num(char(inputdlg(['Crop interferogram? 1=yes 0=np'])));
+        Y          = datastruct.Y;
+        docrop     = str2num(char(inputdlg(['Crop interferogram? 1=yes 0=np'])));
         if(docrop)
             plot_func=1;
             crop_faultdata
