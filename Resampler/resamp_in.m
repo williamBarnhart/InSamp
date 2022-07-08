@@ -9,7 +9,7 @@ losfilename     = {'phi.r4','theta.r4'}                                         
 parfil          = 'eqa.dem_par'                                                   % InSAR params files with length and width, location information. Can be left as is if not processing GAMMA
 
 
-faultfilename   = 'fault.mat';                                              % Full or relative path of the fault file generated with faultMaker
+faultfilename   = {'fault.mat'};                                              % Full or relative path of the fault file generated with faultMaker
 corrfilename    = '';           % Full or relative path to the correlation file. Leave empty to not mask
 demfilename     = '';
 savestructname  = '170817-170910_p122.mat';                                      % Desire outputfile name
