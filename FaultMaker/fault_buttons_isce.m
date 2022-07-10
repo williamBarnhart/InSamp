@@ -70,20 +70,13 @@ switch func
         nx         = datastruct.nx;
         ny         = datastruct.ny;
         X          = datastruct.X;
-        Y          = datastruct.Y;       docrop     = str2num(char(inputdlg(['Crop interferogram? 1=yes 0=np'])));
+        Y          = datastruct.Y;
+        docrop     = str2num(char(inputdlg(['Crop interferogram? 1=yes 0=np'])));
         if(docrop)
             plot_func=1;
             crop_faultdata
             func=18;
         end
-        set(fh(7),'string',num2str(zone));
-
-[ny,nx]=size(savestruct.X);
-        data = savestruct.data;
-        X   = savestruct.X;
-        Y   = savestruct.Y;
-        zone= savestruct.zone;
-        
         set(fh(7),'string',num2str(zone));
         numdatas             = numdatas+1;
 
